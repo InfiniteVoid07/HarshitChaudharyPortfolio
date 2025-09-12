@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshit Chaudhary | Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a192f;
+            color: #ccd6f6;
+        }
+        ::selection {
+            background: #1d3b70;
+            color: #64ffda;
+        }
+        .accent-color {
+            color: #64ffda;
+        }
+        .bg-accent {
+            background-color: #64ffda;
+        }
+        .border-accent {
+            border-color: #64ffda;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #64ffda;
+        }
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #64ffda;
+        }
+        .project-card {
+            background-color: #112240;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .project-card:hover {
+            transform: translateY(-5px) perspective(1000px) rotateX(2deg);
+            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #64ffda;
+            border-radius: 50%;
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+            transition: top 0.1s linear, left 0.1s linear;
+        }
+        .cursor-outline {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #64ffda;
+            border-radius: 50%;
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+            transition: transform 0.2s ease-out, opacity 0.2s ease-out, top 0.2s ease-out, left 0.2s ease-out;
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+
+    <!-- Custom Cursor -->
+    <div id="cursor-dot" class="cursor-dot"></div>
+    <div id="cursor-outline" class="cursor-outline"></div>
+
+    <!-- Social Links - Left Sidebar -->
+    <div class="hidden md:flex fixed bottom-0 left-10 w-10 flex-col items-center z-10">
+        <div class="flex flex-col items-center gap-6">
+            <a href="https://github.com/InfiniteVoid07" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://linkedin.com/in/harshit-chaudhary17" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+        </div>
+        <div class="h-24 w-px bg-gray-600 mt-6"></div>
+    </div>
+
+    <!-- Email - Right Sidebar -->
+    <div class="hidden md:flex fixed bottom-0 right-10 w-10 flex-col items-center z-10">
+        <div class="flex flex-col items-center">
+            <a href="mailto:harshit.chaudhary2022@vitstudent.ac.in" class="text-gray-400 social-icon" style="writing-mode: vertical-rl;">
+                harshit.chaudhary2022@vitstudent.ac.in
+            </a>
+        </div>
+        <div class="h-24 w-px bg-gray-600 mt-6"></div>
+    </div>
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-opacity-80 backdrop-blur-md" style="background-color: rgba(10, 25, 47, 0.85);">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold accent-color">HC</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="nav-link"><span class="accent-color">01.</span> About</a>
+                <a href="#experience" class="nav-link"><span class="accent-color">02.</span> Experience</a>
+                <a href="#projects" class="nav-link"><span class="accent-color">03.</span> Projects</a>
+                <a href="#creative" class="nav-link"><span class="accent-color">04.</span> Creative</a>
+                <a href="#contact" class="nav-link"><span class="accent-color">05.</span> Contact</a>
+            </div>
+            <a href="Harshit_Resume.pdf" target="_blank" class="hidden md:block border border-accent text-accent-color px-4 py-2 rounded-md hover:bg-accent hover:bg-opacity-10 transition-colors duration-300">Resume</a>
+             <button id="mobile-menu-button" class="md:hidden text-gray-400 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-opacity-95" style="background-color: rgba(10, 25, 47, 0.95);">
+            <div class="flex flex-col items-center space-y-6 py-8">
+                <a href="#about" class="nav-link text-lg"><span class="accent-color">01.</span> About</a>
+                <a href="#experience" class="nav-link text-lg"><span class="accent-color">02.</span> Experience</a>
+                <a href="#projects" class="nav-link text-lg"><span class="accent-color">03.</span> Projects</a>
+                <a href="#creative" class="nav-link text-lg"><span class="accent-color">04.</span> Creative</a>
+                <a href="#contact" class="nav-link text-lg"><span class="accent-color">05.</span> Contact</a>
+                <a href="Harshit_Resume.pdf" target="_blank" class="border border-accent text-accent-color px-6 py-3 mt-4 rounded-md hover:bg-accent hover:bg-opacity-10 transition-colors duration-300">Resume</a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container mx-auto px-6 md:px-20 lg:px-40">
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center pt-20">
+            <div class="fade-in-section">
+                <p class="text-lg accent-color mb-4">Hi, my name is</p>
+                <h1 class="text-4xl md:text-7xl font-bold text-gray-200">Harshit Chaudhary.</h1>
+                <h2 class="text-4xl md:text-7xl font-bold text-gray-400 mt-2">I bring ideas to life with code.</h2>
+                <p class="mt-6 max-w-xl text-lg text-gray-400">
+                    I'm a creatively driven software developer with a specialization in AI and Robotics, passionate about building robust applications and exploring the intersection of technology and user-centric design.
+                </p>
+                <div class="mt-12">
+                    <a href="#projects" class="border-2 border-accent text-accent-color text-xl px-8 py-4 rounded-md hover:bg-accent hover:bg-opacity-10 transition-colors duration-300">
+                        View My Projects
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 fade-in-section">
+            <h2 class="text-3xl font-bold mb-8 flex items-center">
+                <span class="accent-color mr-4 text-2xl">01.</span> About Me
+                <span class="h-px bg-gray-700 flex-grow ml-6"></span>
+            </h2>
+            <div class="max-w-3xl text-gray-400 text-lg space-y-4">
+                <p>
+                    Hello! I’m Harshit. My curiosity isn't confined to a single domain; it drives me to understand how things work, from the intricacies of a machine learning model to the narrative structure of a historical event. This desire to learn translates directly into my work as a developer, where I enjoy building projects across web, mobile, and AI.
+                </p>
+                <p>
+                    For me, coding is a powerful medium for creation and problem-solving. My experience in creative fields has also taught me the art of storytelling, a skill I believe is essential for building applications that truly connect with users.
+                </p>
+                <p>Here are a few technologies I’ve been working with recently:</p>
+                <ul class="grid grid-cols-2 gap-2 text-sm">
+                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>JavaScript (ES6+)</li>
+                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>React & Node.js</li>
+                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>Python & Flask</li>
+                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>TensorFlow & PyTorch</li>
+                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>PostgreSQL & MongoDB</li>
+                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>Docker & Kubernetes</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24 fade-in-section">
+            <h2 class="text-3xl font-bold mb-8 flex items-center">
+                <span class="accent-color mr-4 text-2xl">02.</span> Where I've Worked
+                <span class="h-px bg-gray-700 flex-grow ml-6"></span>
+            </h2>
+            <div x-data="{ tab: 'niit' }" class="flex flex-col md:flex-row gap-8">
+                <div class="flex md:flex-col">
+                    <button @click="tab = 'niit'" :class="{'border-accent accent-color bg-gray-800': tab === 'niit', 'border-gray-700': tab !== 'niit'}" class="border-b-2 md:border-b-0 md:border-l-2 text-left px-4 py-3 whitespace-nowrap hover:bg-gray-800 hover:text-accent-color transition-colors duration-300">
+                        NIIT MTS
+                    </button>
+                    <!-- Add more buttons here for future experience -->
+                </div>
+                <div class="w-full">
+                    <div x-show="tab === 'niit'">
+                        <h3 class="text-xl font-medium text-gray-200 flex items-center gap-4">
+                            <span>Software Development Intern <span class="accent-color">@ NIIT Managed Training Services</span></span>
+                            <!-- TODO: Replace "#" with the actual link to your deployed internship project -->
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-gray-400 mb-4">June 2025 - July 2025</p>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Engineered a full-stack user management system with React, Node/Express, PostgreSQL, and JWT auth.</li>
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Deployed on Vercel with a cloud backend and enhanced DB queries for sub-800ms response times.</li>
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Delivered 50% of the backend logic and 40% of UI features in Agile sprints with a 5-member team.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 fade-in-section">
+            <h2 class="text-3xl font-bold mb-8 flex items-center">
+                <span class="accent-color mr-4 text-2xl">03.</span> Some Things I've Built
+                <span class="h-px bg-gray-700 flex-grow ml-6"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Project 1 -->
+                <div class="project-card rounded-md shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <svg class="w-10 h-10 accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 4h5m-5 4h5"></path></svg>
+                            <div class="flex gap-4 text-gray-400">
+                                <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                                <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-200 mb-2">TrackKar - Route Rationalization</h3>
+                        <ul class="text-gray-400 space-y-2 text-sm mt-4">
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Improved 50+ public routes using ML on GPS data.</li>
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Raised arrival-time accuracy by 18% with real-time dashboards.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 text-sm flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Python</span>
+                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">ML</span>
+                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Flask</span>
+                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Folium</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card rounded-md shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <svg class="w-10 h-10 accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            <div class="flex gap-4 text-gray-400">
+                                <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                                <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-200 mb-2">Saavdhaan - Crime Hotspot Detection</h3>
+                        <ul class="text-gray-400 space-y-2 text-sm mt-4">
+                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Trained clustering models on 15K+ crime records.</li>
+                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Developed geofencing alerts & a safer route suggestion algorithm.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 text-sm flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Python</span>
+                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">REST APIs</span>
+                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">GeoPandas</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card rounded-md shadow-lg p-6 flex flex-col justify-between">
+                     <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <svg class="w-10 h-10 accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                            <div class="flex gap-4 text-gray-400">
+                                <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                                <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-200 mb-2">Disaster Management Platform</h3>
+                         <ul class="text-gray-400 space-y-2 text-sm mt-4">
+                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Built a cross-platform app tested by 200+ users.</li>
+                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Integrated offline guides & helpline APIs to cut response delays by 30%.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 text-sm flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">React</span>
+                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Flutter</span>
+                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Python</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Creative Section -->
+        <section id="creative" class="py-24 fade-in-section">
+            <h2 class="text-3xl font-bold mb-8 flex items-center">
+                <span class="accent-color mr-4 text-2xl">04.</span> Beyond the Code
+                <span class="h-px bg-gray-700 flex-grow ml-6"></span>
+            </h2>
+            <div class="max-w-3xl mx-auto text-center">
+                 <h3 class="text-2xl font-bold text-gray-200">President of the Dramatics Club</h3>
+                 <p class="text-lg accent-color mt-1">VIT Chennai (2024-2025)</p>
+                 <p class="mt-6 text-lg text-gray-400">
+                    As President, I led a talented team of 50+ members through multiple large-scale productions. My role involved scriptwriting, direction, and management, where we fostered a collaborative environment that led to national accolades and a 50% increase in workshop turnout.
+                 </p>
+                 <div class="mt-8 flex justify-center flex-wrap gap-4">
+                     <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm">Winner @ IIT Madras</span>
+                     <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm">Finalist @ IIT Bombay</span>
+                     <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm">Winner @ VIT Vellore</span>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 text-center fade-in-section">
+            <h2 class="text-2xl font-bold mb-2 accent-color">05. What's Next?</h2>
+            <h3 class="text-5xl font-bold text-gray-200 mb-4">Get In Touch</h3>
+            <p class="max-w-xl mx-auto text-lg text-gray-400">
+                I'm currently seeking opportunities for internships and full-time roles. Whether you have a question, a project idea, or just want to connect, my inbox is always open. I'll get back to you as soon as possible.
+            </p>
+            <div class="mt-12">
+                <a href="mailto:harshit.chaudhary2022@vitstudent.ac.in" class="border-2 border-accent text-accent-color text-xl px-8 py-4 rounded-md hover:bg-accent hover:bg-opacity-10 transition-colors duration-300">
+                    Say Hello
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-6 text-gray-500 text-sm">
+        <p>Designed & Built by Harshit Chaudhary</p>
+        <p>Inspired by Brittany Chiang & Cassie Evans</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when a link is clicked
+            const navLinks = document.querySelectorAll('#mobile-menu a, header nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(!link.href.includes('.pdf')) { // Don't hide for resume link
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+
+            // --- Intersection Observer for fade-in animations ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Set first section to visible immediately
+            if (sections.length > 0) {
+                 setTimeout(() => {
+                    sections[0].classList.add('is-visible');
+                    observer.unobserve(sections[0]);
+                }, 100);
+            }
+
+
+            // --- Custom Cursor ---
+            const cursorDot = document.getElementById('cursor-dot');
+            const cursorOutline = document.getElementById('cursor-outline');
+
+            window.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+
+                cursorOutline.style.left = `${posX}px`;
+                cursorOutline.style.top = `${posY}px`;
+            });
+
+            document.querySelectorAll('a, button, .project-card').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorOutline.style.transform = 'scale(1.5)';
+                    cursorOutline.style.opacity = '0.5';
+                });
+                el.addEventListener('mouseleave', () => {
+                     cursorOutline.style.transform = 'scale(1)';
+                     cursorOutline.style.opacity = '1';
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
+

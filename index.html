@@ -45,15 +45,6 @@
             transform: translateY(-3px);
             color: #64ffda;
         }
-        .project-card {
-            background-color: #112240;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            transform-style: preserve-3d;
-        }
-        .project-card:hover {
-            transform: translateY(-5px) perspective(1000px) rotateX(2deg);
-            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
-        }
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -107,8 +98,8 @@
     <!-- Email - Right Sidebar -->
     <div class="hidden md:flex fixed bottom-0 right-10 w-10 flex-col items-center z-10">
         <div class="flex flex-col items-center">
-            <a href="mailto:harshit.chaudhary2022@vitstudent.ac.in" class="text-gray-400 social-icon" style="writing-mode: vertical-rl;">
-                harshit.chaudhary2022@vitstudent.ac.in
+            <a href="mailto:harshitchaudhary027@gmail.com" class="text-gray-400 social-icon" style="writing-mode: vertical-rl;">
+                harshitchaudhary027@gmail.com
             </a>
         </div>
         <div class="h-24 w-px bg-gray-600 mt-6"></div>
@@ -125,7 +116,7 @@
                 <a href="#creative" class="nav-link"><span class="accent-color">04.</span> Creative</a>
                 <a href="#contact" class="nav-link"><span class="accent-color">05.</span> Contact</a>
             </div>
-            <a href="Harshit_Resume.pdf" target="_blank" class="hidden md:block border border-accent text-accent-color px-4 py-2 rounded-md hover:bg-accent hover:bg-opacity-10 transition-colors duration-300">Resume</a>
+            <a href="Harshit_CV.pdf" target="_blank" class="hidden md:block border border-accent text-accent-color px-4 py-2 rounded-md hover:bg-accent hover:bg-opacity-10 transition-colors duration-300">Resume</a>
              <button id="mobile-menu-button" class="md:hidden text-gray-400 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
@@ -142,7 +133,6 @@
             </div>
         </div>
     </header>
-
 
     <main class="container mx-auto px-6 md:px-20 lg:px-40">
 
@@ -178,12 +168,13 @@
                 </p>
                 <p>Here are a few technologies I’ve been working with recently:</p>
                 <ul class="grid grid-cols-2 gap-2 text-sm">
-                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>JavaScript (ES6+)</li>
+                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>JavaScript</li>
                     <li class="flex items-center"><span class="accent-color mr-2">▹</span>React & Node.js</li>
-                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>Python & Flask</li>
+                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>Python & Streamlit</li>
+                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>REST APIs</li>
+                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>DeltaLake and MongoDB</li>
+                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>Docker</li>
                     <li class="flex items-center"><span class="accent-color mr-2">▹</span>TensorFlow & PyTorch</li>
-                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>PostgreSQL & MongoDB</li>
-                    <li class="flex items-center"><span class="accent-color mr-2">▹</span>Docker & Kubernetes</li>
                 </ul>
             </div>
         </section>
@@ -194,26 +185,60 @@
                 <span class="accent-color mr-4 text-2xl">02.</span> Where I've Worked
                 <span class="h-px bg-gray-700 flex-grow ml-6"></span>
             </h2>
-            <div x-data="{ tab: 'niit' }" class="flex flex-col md:flex-row gap-8">
-                <div class="flex md:flex-col">
-                    <button @click="tab = 'niit'" :class="{'border-accent accent-color bg-gray-800': tab === 'niit', 'border-gray-700': tab !== 'niit'}" class="border-b-2 md:border-b-0 md:border-l-2 text-left px-4 py-3 whitespace-nowrap hover:bg-gray-800 hover:text-accent-color transition-colors duration-300">
+            <div x-data="{ tab: 'ubs' }" class="flex flex-col md:flex-row gap-8 relative">
+                <div class="flex md:flex-col overflow-x-auto no-scrollbar relative z-10 md:w-48">
+                    <!-- Animated active indicator bar -->
+                    <div class="absolute left-0 w-full h-0.5 md:w-0.5 md:h-12 bg-gray-700 transition-all duration-300 z-[-1]"></div>
+                    
+                    <button @click="tab = 'ubs'" :class="{'text-accent-color bg-[#112240] border-b-2 md:border-b-0 md:border-l-2 border-accent': tab === 'ubs', 'text-gray-400 border-b-2 md:border-b-0 md:border-l-2 border-transparent hover:bg-[#112240] hover:text-gray-200': tab !== 'ubs'}" class="text-left px-6 py-3 whitespace-nowrap transition-all duration-300 font-mono text-sm">
+                        UBS
+                    </button>
+                    <button @click="tab = 'niit'" :class="{'text-accent-color bg-[#112240] border-b-2 md:border-b-0 md:border-l-2 border-accent': tab === 'niit', 'text-gray-400 border-b-2 md:border-b-0 md:border-l-2 border-transparent hover:bg-[#112240] hover:text-gray-200': tab !== 'niit'}" class="text-left px-6 py-3 whitespace-nowrap transition-all duration-300 font-mono text-sm">
                         NIIT MTS
                     </button>
                 </div>
-                <div class="w-full">
-                    <div x-show="tab === 'niit'">
+                
+                <div class="w-full min-h-[300px]">
+                    <!-- UBS Experience -->
+                    <div x-show="tab === 'ubs'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" style="display: none;">
+                        <h3 class="text-xl font-medium text-gray-200 flex items-center gap-4">
+                            <span>Automation Intern <span class="accent-color">@ UBS</span></span>
+                        </h3>
+                        <p class="text-sm text-gray-400 mb-4 font-mono">Jan 2026 - Present</p>
+                        <ul class="space-y-4 text-gray-400">
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Constructed a Python-based automation pipeline aggregating 10+ Excel sources into structured reports, reducing manual effort by 30+ hours.</li>
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Formulated modular OOP workflows using Pandas, NumPy, and Openpyxl for data ingestion and transformation with robust error handling.</li>
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Launched a Streamlit frontend to simplify interaction and prototyped an AI-driven chatbot for automated output analysis.</li>
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Assembled Power BI dashboards for dynamic visualization.</li>
+                        </ul>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="bg-gray-800 text-accent-color px-3 py-1 rounded-full text-xs font-mono bg-opacity-50">Python</span>
+                            <span class="bg-gray-800 text-accent-color px-3 py-1 rounded-full text-xs font-mono bg-opacity-50">Streamlit</span>
+                            <span class="bg-gray-800 text-accent-color px-3 py-1 rounded-full text-xs font-mono bg-opacity-50">Pandas & NumPy</span>
+                            <span class="bg-gray-800 text-accent-color px-3 py-1 rounded-full text-xs font-mono bg-opacity-50">Power BI</span>
+                        </div>
+                    </div>
+
+                    <!-- NIIT Experience -->
+                    <div x-show="tab === 'niit'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" style="display: none;">
                         <h3 class="text-xl font-medium text-gray-200 flex items-center gap-4">
                             <span>Software Development Intern <span class="accent-color">@ NIIT Managed Training Services</span></span>
                             <a href="https://github.com/InfiniteVoid07/Profile-Management" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                             </a>
                         </h3>
-                        <p class="text-sm text-gray-400 mb-4">June 2025 - July 2025</p>
-                        <ul class="space-y-2 text-gray-400">
+                        <p class="text-sm text-gray-400 mb-4 font-mono">June 2025 - July 2025</p>
+                        <ul class="space-y-4 text-gray-400">
                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Engineered a full-stack user management system with React, Node/Express, PostgreSQL, and JWT auth.</li>
                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Deployed on Vercel with a cloud backend and enhanced DB queries for sub-800ms response times.</li>
                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Delivered 50% of the backend logic and 40% of UI features in Agile sprints with a 5-member team.</li>
                         </ul>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="bg-gray-800 text-accent-color px-3 py-1 rounded-full text-xs font-mono bg-opacity-50">React</span>
+                            <span class="bg-gray-800 text-accent-color px-3 py-1 rounded-full text-xs font-mono bg-opacity-50">Node.js</span>
+                            <span class="bg-gray-800 text-accent-color px-3 py-1 rounded-full text-xs font-mono bg-opacity-50">PostgreSQL</span>
+                            <span class="bg-gray-800 text-accent-color px-3 py-1 rounded-full text-xs font-mono bg-opacity-50">JWT</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -221,101 +246,154 @@
         
         <!-- Projects Section -->
         <section id="projects" class="py-24 fade-in-section">
-            <h2 class="text-3xl font-bold mb-8 flex items-center">
+            <h2 class="text-3xl font-bold mb-12 flex items-center">
                 <span class="accent-color mr-4 text-2xl">03.</span> Some Things I've Built
                 <span class="h-px bg-gray-700 flex-grow ml-6"></span>
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="flex flex-col space-y-4">
+
+                <!-- Project 1: Smart Stick -->
+                <div class="group relative flex flex-col md:flex-row gap-4 md:gap-8 p-6 md:p-8 -mx-6 md:-mx-8 rounded-2xl transition-all duration-300 hover:bg-[#112240]/50 border border-transparent hover:border-gray-700 hover:shadow-xl">
+                    <!-- Left Column: Tech Stack -->
+                    <div class="md:w-1/4 md:pt-1">
+                        <div class="font-mono text-sm text-gray-500 mb-3 hidden md:block">Featured Project</div>
+                        <div class="flex flex-wrap gap-x-3 gap-y-2">
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">Arduino</span>
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">ML</span>
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">Computer Vision</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Content -->
+                    <div class="md:w-3/4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-gray-200 group-hover:text-[#64ffda] transition-colors">Smart Stick for Visually Impaired</h3>
+                            <div class="flex gap-4 text-gray-400">
+                                <a href="https://github.com/InfiniteVoid07/SmartStick-with-ML-and-GPS" target="_blank" class="social-icon hover:text-[#64ffda]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <ul class="text-gray-400 space-y-3 text-sm leading-relaxed mt-4">
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Engineered an assistive device with ultrasonic sensors, GPS, and camera object detection.</li>
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Devised ML-driven path optimization via Google Maps APIs to avoid hazards and trigger SOS alerts.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 2: Frame Interpolation -->
+                <div class="group relative flex flex-col md:flex-row gap-4 md:gap-8 p-6 md:p-8 -mx-6 md:-mx-8 rounded-2xl transition-all duration-300 hover:bg-[#112240]/50 border border-transparent hover:border-gray-700 hover:shadow-xl">
+                    <div class="md:w-1/4 md:pt-1">
+                        <div class="font-mono text-sm text-gray-500 mb-3 hidden md:block">Featured Project</div>
+                        <div class="flex flex-wrap gap-x-3 gap-y-2">
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">Python</span>
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">ConvLSTM</span>
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">ML Pipeline</span>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-gray-200 group-hover:text-[#64ffda] transition-colors">AI Frame Interpolation for WMS</h3>
+                            <div class="flex gap-4 text-gray-400">
+                                <a href="https://github.com/chamooda2/Satellite-imagery-frame-interpolation-using-convLSTMs" target="_blank" class="social-icon hover:text-[#64ffda]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <ul class="text-gray-400 space-y-3 text-sm leading-relaxed mt-4">
+                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Designed an ML pipeline generating smooth satellite imagery videos for WMS platforms.</li>
+                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Integrated environmental parameters into a ConvLSTM model with a custom loss function.</li>
+                        </ul>
+                    </div>
+                </div>
                 
-                <!-- Project 1 -->
-                <div class="project-card rounded-md shadow-lg p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <svg class="w-10 h-10 accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 4h5m-5 4h5"></path></svg>
+                <!-- Project 3: TrackKar -->
+                <div class="group relative flex flex-col md:flex-row gap-4 md:gap-8 p-6 md:p-8 -mx-6 md:-mx-8 rounded-2xl transition-all duration-300 hover:bg-[#112240]/50 border border-transparent hover:border-gray-700 hover:shadow-xl">
+                    <div class="md:w-1/4 md:pt-1">
+                        <div class="flex flex-wrap gap-x-3 gap-y-2">
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">Python</span>
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">Flask</span>
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">Folium</span>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-gray-200 group-hover:text-[#64ffda] transition-colors">TrackKar - Route Rationalization</h3>
                             <div class="flex gap-4 text-gray-400">
-                                <a href="https://github.com/InfiniteVoid07/SIH-1617_TrackKar" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                                <a href="https://github.com/InfiniteVoid07/SIH-1617_TrackKar" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                <a href="https://github.com/InfiniteVoid07/SIH-1617_TrackKar" target="_blank" class="social-icon hover:text-[#64ffda]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-200 mb-2">TrackKar - Route Rationalization</h3>
-                        <ul class="text-gray-400 space-y-2 text-sm mt-4">
+                        <ul class="text-gray-400 space-y-3 text-sm leading-relaxed mt-4">
                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Improved 50+ public routes using ML on GPS data.</li>
-                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Raised arrival-time accuracy by 18% with real-time dashboards.</li>
+                            <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Raised arrival-time accuracy by 18% with real-time dashboards via Folium.</li>
                         </ul>
-                    </div>
-                    <div class="mt-4 text-sm flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Python</span>
-                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">ML</span>
-                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Flask</span>
-                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Folium</span>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card rounded-md shadow-lg p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <svg class="w-10 h-10 accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <!-- Project 4: Saavdhaan -->
+                <div class="group relative flex flex-col md:flex-row gap-4 md:gap-8 p-6 md:p-8 -mx-6 md:-mx-8 rounded-2xl transition-all duration-300 hover:bg-[#112240]/50 border border-transparent hover:border-gray-700 hover:shadow-xl">
+                    <div class="md:w-1/4 md:pt-1">
+                        <div class="flex flex-wrap gap-x-3 gap-y-2">
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">Python</span>
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">REST APIs</span>
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">GeoPandas</span>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-gray-200 group-hover:text-[#64ffda] transition-colors">Saavdhaan - Crime Hotspots</h3>
                             <div class="flex gap-4 text-gray-400">
-                                <a href="https://github.com/InfiniteVoid07/CrimeHotspots" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                                <a href="https://github.com/InfiniteVoid07/CrimeHotspots" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                <a href="https://github.com/InfiniteVoid07/CrimeHotspots" target="_blank" class="social-icon hover:text-[#64ffda]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-200 mb-2">Saavdhaan - Crime Hotspot Detection</h3>
-                        <ul class="text-gray-400 space-y-2 text-sm mt-4">
+                        <ul class="text-gray-400 space-y-3 text-sm leading-relaxed mt-4">
                              <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Trained clustering models on 15K+ crime records.</li>
-                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Developed geofencing alerts & a safer route suggestion algorithm.</li>
+                             <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Deployed geofencing alerts & a safer route suggestion algorithm.</li>
                         </ul>
-                    </div>
-                    <div class="mt-4 text-sm flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Python</span>
-                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">REST APIs</span>
-                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">GeoPandas</span>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="project-card rounded-md shadow-lg p-6 flex flex-col justify-between">
-                     <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <svg class="w-10 h-10 accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                <!-- Project 5: Disaster Management -->
+                <div class="group relative flex flex-col md:flex-row gap-4 md:gap-8 p-6 md:p-8 -mx-6 md:-mx-8 rounded-2xl transition-all duration-300 hover:bg-[#112240]/50 border border-transparent hover:border-gray-700 hover:shadow-xl">
+                    <div class="md:w-1/4 md:pt-1">
+                        <div class="flex flex-wrap gap-x-3 gap-y-2">
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">React & Flutter</span>
+                            <span class="text-accent-color text-xs font-mono bg-accent/5 px-2 py-1 rounded">Python</span>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-gray-200 group-hover:text-[#64ffda] transition-colors">Disaster Management App</h3>
                             <div class="flex gap-4 text-gray-400">
-                                <a href="https://github.com/InfiniteVoid07/SIH-DisasterManagement" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                                <a href="https://github.com/InfiniteVoid07/SIH-DisasterManagement" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                <a href="https://github.com/InfiniteVoid07/SIH-DisasterManagement" target="_blank" class="social-icon hover:text-[#64ffda]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-200 mb-2">Disaster Management Platform</h3>
-                         <ul class="text-gray-400 space-y-2 text-sm mt-4">
+                         <ul class="text-gray-400 space-y-3 text-sm leading-relaxed mt-4">
                              <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Built a cross-platform app tested by 200+ users.</li>
                              <li class="flex items-start"><span class="accent-color mr-3 mt-1">▹</span>Integrated offline guides & helpline APIs to cut response delays by 30%.</li>
                         </ul>
-                    </div>
-                    <div class="mt-4 text-sm flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">React</span>
-                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Flutter</span>
-                        <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">Python</span>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- Creative Section -->
+        <!-- Creative & Achievements Section -->
         <section id="creative" class="py-24 fade-in-section">
             <h2 class="text-3xl font-bold mb-8 flex items-center">
                 <span class="accent-color mr-4 text-2xl">04.</span> Beyond the Code
                 <span class="h-px bg-gray-700 flex-grow ml-6"></span>
             </h2>
             <div class="max-w-3xl mx-auto text-center">
-                 <h3 class="text-2xl font-bold text-gray-200">President of the Dramatics Club</h3>
+                 <h3 class="text-2xl font-bold text-gray-200">President of the Dramatics Club & Key Milestones</h3>
                  <p class="text-lg accent-color mt-1">VIT Chennai (2024-2025)</p>
                  <p class="mt-6 text-lg text-gray-400">
-                    As President, I led a talented team of 50+ members through multiple large-scale productions. My role involved scriptwriting, direction, and management, where we fostered a collaborative environment that led to national accolades and a 50% increase in workshop turnout.
+                    As President, I led a talented team of 50+ members through multiple large-scale productions. My role involved scriptwriting, direction, and management, where we fostered a collaborative environment that led to national accolades and a 50% increase in workshop turnout. Beyond theatre, I am actively engaged in competitive programming and hackathons.
                  </p>
                  <div class="mt-8 flex justify-center flex-wrap gap-4">
-                     <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm">Winner @ IIT Madras</span>
-                     <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm">Finalist @ IIT Bombay</span>
-                     <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm">Winner @ VIT Vellore</span>
+                     <span class="bg-gray-800 text-accent-color border border-accent px-4 py-2 rounded-full text-sm font-semibold">Best Writer & Director @ Saarang '25 (IIT Madras)</span>
+                     <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm">1st Prize @ Riviera '25 (VIT Vellore)</span>
+                     <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm">Finalist @ Aagaaz '24 (IIT Bombay)</span>
+                     <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm">Top 5 National @ Hackout '23</span>
+                     <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm">SIH '23 & '24 (Top 1%)</span>
+                     <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm">400+ LeetCode Solved</span>
                  </div>
             </div>
         </section>
@@ -328,7 +406,7 @@
                 I'm currently seeking opportunities for internships and full-time roles. Whether you have a question, a project idea, or just want to connect, my inbox is always open. I'll get back to you as soon as possible.
             </p>
             <div class="mt-12">
-                <a href="mailto:harshit.chaudhary2022@vitstudent.ac.in" class="border-2 border-accent text-accent-color text-xl px-8 py-4 rounded-md hover:bg-accent hover:bg-opacity-10 transition-colors duration-300">
+                <a href="mailto:harshitchaudhary027@gmail.com" class="border-2 border-accent text-accent-color text-xl px-8 py-4 rounded-md hover:bg-accent hover:bg-opacity-10 transition-colors duration-300">
                     Say Hello
                 </a>
             </div>
@@ -362,7 +440,6 @@
                 });
             });
 
-
             // --- Intersection Observer for fade-in animations ---
             const sections = document.querySelectorAll('.fade-in-section');
             const options = {
@@ -392,7 +469,6 @@
                 }, 100);
             }
 
-
             // --- Custom Cursor ---
             const cursorDot = document.getElementById('cursor-dot');
             const cursorOutline = document.getElementById('cursor-outline');
@@ -408,7 +484,7 @@
                 cursorOutline.style.top = `${posY}px`;
             });
 
-            document.querySelectorAll('a, button, .project-card').forEach(el => {
+            document.querySelectorAll('a, button').forEach(el => {
                 el.addEventListener('mouseenter', () => {
                     cursorOutline.style.transform = 'scale(1.5)';
                     cursorOutline.style.opacity = '0.5';
@@ -423,5 +499,3 @@
     </script>
 </body>
 </html>
-
-
